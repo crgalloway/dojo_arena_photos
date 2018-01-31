@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Street Fight</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<script src= 'http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'></script>
+	<script>
+		var characterselect = '<div id="selection">'+
+		'<select>'+
+			'<option value="chara">Character</option>'+
+			'<option value="spooderman">spooderman</option>'+
+			'<option value="batman">batman</option>'+
+			'<option value="sanic">sanic</option>'+
+			'<option value="doggo">doggo</option>'+
+		'</select>'+
+		'<select>'+
+			'<option value="diff">Difficulty</option>'+
+			'<option value="easy">easy</option>'+
+			'<option value="normal">normal</option>'+
+			'<option value="hard">hard</option>'+
+			'<option value="unreal">unreal</option>'+
+		'</select>'+
+		'<br>'+
+		'<button id="start">FIGHT!!!</button>'+
+		'</div>';
+		$(document).ready(function(){
+		
+			$("#america").hover(function(){
+				$("#main").css('background-image', 'url("america.jpg")');
+				$("#main").attr('class', 'size');
+			});
+			$("#africa").hover(function(){
+				$("#main").css('background-image', 'url("africa.jpg")');
+				$("#main").attr('class', 'size');
+			});
+			$("#china").hover(function(){
+				$("#main").css('background-image', 'url("china.jpg")');
+				$("#main").attr('class', 'size');
+			});
+			$("#london").hover(function(){
+				$("#main").css('background-image', 'url("london.jpg")');
+				$("#main").attr('class', 'size');
+			});
+			$("#rio").hover(function(){
+				$("#main").css('background-image', 'url("rio.jpg")');
+				$("#main").attr('class', 'size');
+			});
+			$("#moscow").hover(function(){
+				$("#main").css('background-image', 'url("moscow.jpg")');
+				$("#main").attr('class', 'size');
+			});
+			$('button').click(function(){
+				$('#main').html(characterselect); 
+			})
+			
+		});
+
+		$(document).on('click', '#start', function(){
+			$('#main').html("<div id='spooderman'></div>");
+			});
+			
+
+
+
+
+
+
+
+
+
+        var character = {
+        	x: 0, 
+        	y: 0
+        }
+        var enemy = {
+        	x: 0,
+        	y: 0
+        }
+        function drawCharacter(char){
+        	document.getElementById('main').innerHTML += "<div id=" + char + "></div>";
+        }
+	</script>
+</head>
+<body>
+	<div id="main">
+		<div id="selection">
+			<button id="america">America</button>
+			<button id="africa">Africa</button>
+			<button id="china">China</button>
+			<button id="london">London</button>
+			<button id="rio">Rio</button>
+			<button id="moscow">Moscow</button>
+		</div>
+	</div>
+</body>
+</html>
